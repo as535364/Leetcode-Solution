@@ -12,7 +12,7 @@ public:
             ++count[rowStr];
         }
         int ans = 0;
-        for (auto [k, v] : count) {
+        for (auto &[k, v] : count) {
             ans = max(ans, v);
         }
         return ans;
