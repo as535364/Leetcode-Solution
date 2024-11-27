@@ -1,20 +1,25 @@
 class Solution {
     int bfs(int n, const vector<vector<int>> &graph) {
-        int ansDis = INT_MAX;
-        queue<pair<int, int>> q;
+        queue<int> q;
         unordered_set<int> vis;
+        int ans = 0;
 
-        q.push({0, 0});
+        q.push(0);
         vis.insert(0);
+        
         while (!q.empty()) {
-            auto [dis, node] = q.front();
-            q.pop();
-            if (node == n - 1) return dis;
-            for (int neighbor : graph[node]) {
-                if (vis.count(neighbor)) continue;
-                vis.insert(neighbor);
-                q.push({dis + 1, neighbor});
+            int layerSize = q.size();
+            for (int i = 0; i < layerSize; ++i) {
+                int node = q.front();
+                q.pop();
+                if (node == n - 1) return ans;
+                for (int neighbor : graph[node]) {
+                    if (vis.count(neighbor)) continue;
+                    vis.insert(neighbor);
+                    q.push(neighbor);
+                }
             }
+            ans++;
         }
         return -1;
     }
