@@ -25,9 +25,6 @@ private:
                 if (!isValid(newRow, newCol) || vis[newRow][newCol]) continue;
                 vis[newRow][newCol] = true;
                 pq.push({dis + grid[newRow][newCol], newRow, newCol});
-                // int row = node / n, col = node % n;
-                // int newRow = v / n, newCol = v % n;
-                // cout << "from: " << row << ' ' << col << " to " << newRow << ' ' << newCol << endl;
             }
         }
         return -1;
