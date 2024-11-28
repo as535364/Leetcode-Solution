@@ -9,21 +9,24 @@ private:
 
     int dijkstra(int src, int dst, const vector<vector<pair<int, int>>> &graph) {
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        deque<pair<int, int>> dq;
+
         unordered_set<int> vis;
 
         vis.insert(src);
-        pq.push({0, src});
+        dq.push_front({0, src});
 
-        while (!pq.empty()) {
-            auto [dis, node] = pq.top();
-            pq.pop();
+        while (!dq.empty()) {
+            auto [dis, node] = dq.front();
+            dq.pop_front();
 
             if (node == dst) return dis;
 
             for (auto [w, v] : graph[node]) {
                 if (vis.find(v) != vis.end()) continue;
                 vis.insert(v);
-                pq.push({dis + w, v});
+                if (w == 0) dq.push_front({dis + w, v});
+                else dq.push_back({dis + w, v});
                 // int row = node / n, col = node % n;
                 // int newRow = v / n, newCol = v % n;
                 // cout << "from: " << row << ' ' << col << " to " << newRow << ' ' << newCol << endl;
