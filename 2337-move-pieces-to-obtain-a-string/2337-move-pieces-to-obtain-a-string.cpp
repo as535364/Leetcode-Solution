@@ -1,13 +1,13 @@
 class Solution {
 public:
     bool canChange(string start, string target) {
-        int sLen = start.length(), tLen = target.length();
+        int len = start.length();
         int i = 0, j = 0;
-        while (i < sLen || j < tLen) {
-            while (i < sLen && start[i] == '_') i++;
-            while (j < tLen && target[j] == '_') j++;
-            if (i == sLen || j == tLen) {
-                return i == sLen && j == tLen;
+        while (i < len || j < len) {
+            while (i < len && start[i] == '_') i++;
+            while (j < len && target[j] == '_') j++;
+            if (i == len || j == len) {
+                return i == len && j == len;
             }
 
             if (start[i] != target[j] ||
