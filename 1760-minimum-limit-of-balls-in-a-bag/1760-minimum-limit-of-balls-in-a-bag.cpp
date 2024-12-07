@@ -12,8 +12,11 @@ public:
     int minimumSize(vector<int>& nums, int maxOperations) {
         int l = 1, r = *max_element(nums.begin(), nums.end());
         while (l <= r) {
-            int m = l + (r - l) / 2;
-            if (isOK(nums, maxOperations, m)) {
+            int m = l + (r - l) / 2, count = 0;
+            for (int num : nums) {
+                count += (num - 1) / m;
+            }
+            if (count <= maxOperations) {
                 r = m - 1;
             }
             else {
