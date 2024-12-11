@@ -1,12 +1,11 @@
 class Solution {
 private:
     bool isOK(const vector<int> &ribbons, int k, int x) {
-        int cut = 0;
+        int cut = ribbons.size();
         for (int ribbon : ribbons) {
-            cut += ribbon / x;
-            if (cut >= k) return true;
+            cut += ribbon / x - 1;
         }
-        return false;
+        return cut >= k;
     }
 public:
     int maxLength(vector<int>& ribbons, int k) {
