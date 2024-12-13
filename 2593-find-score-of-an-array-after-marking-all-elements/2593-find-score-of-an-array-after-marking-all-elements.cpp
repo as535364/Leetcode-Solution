@@ -1,21 +1,18 @@
 class Solution {
 public:
     long long findScore(vector<int>& nums) {
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-        vector<bool> marked(nums.size());
-        for (int i = 0; i < nums.size(); ++i) {
-            pq.push({nums[i], i});
-        }
+        nums.push_back(1e6);
 
         long long score = 0;
-        while (!pq.empty()) {
-            auto [num, idx] = pq.top();
-            pq.pop();
-            if (marked[idx]) continue;
+        int start = -1;
 
-            score += num;
-            if (idx + 1 < nums.size()) marked[idx + 1] = true;;
-            if (idx - 1 >= 0) marked[idx - 1] = true;
+        for (int i = 1; i < nums.size(); ++i) {
+            if (nums[i] < nums[i - 1]) continue;
+            for (int j = i - 1; j > start; j -= 2) {
+                score += nums[j];
+            }
+            start = i;
+            ++i;
         }
         return score;
     }
