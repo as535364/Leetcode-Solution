@@ -2,7 +2,7 @@ class Solution {
 public:
     long long findScore(vector<int>& nums) {
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-        unordered_set<int> marked;
+        vector<bool> marked(nums.size());
         for (int i = 0; i < nums.size(); ++i) {
             pq.push({nums[i], i});
         }
@@ -11,11 +11,11 @@ public:
         while (!pq.empty()) {
             auto [num, idx] = pq.top();
             pq.pop();
-            if (marked.count(idx)) continue;
+            if (marked[idx]) continue;
 
             score += num;
-            marked.insert(idx + 1);
-            marked.insert(idx - 1);
+            if (idx + 1 < nums.size()) marked[idx + 1] = true;;
+            if (idx - 1 >= 0) marked[idx - 1] = true;
         }
         return score;
     }
