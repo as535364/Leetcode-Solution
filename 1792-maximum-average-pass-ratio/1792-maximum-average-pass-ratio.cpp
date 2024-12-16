@@ -1,30 +1,25 @@
 class Solution {
 public:
     double maxAverageRatio(vector<vector<int>>& classes, int extraStudents) {
-        auto cmp = [](const vector<int> &a, const vector<int> &b) {
-            double diffa = ((double)a[0] + 1) / (a[1] + 1) - (double)a[0] / a[1];
-            double diffb = ((double)b[0] + 1) / (b[1] + 1) - (double)b[0] / b[1];
-            return diffa < diffb;
-        };
-
-        priority_queue<vector<int>, vector<vector<int>>, decltype(cmp)> pq;
+        priority_queue<tuple<double, int, int>> pq;
         for (const auto &c : classes) {
-            pq.push(c);
+            double diff = (double)(c[0] + 1) / (c[1] + 1) - (double)c[0] / c[1];
+            pq.push({diff, c[0], c[1]});
         }
 
         while (extraStudents--) {
-            auto now = pq.top();
+            auto [_, a, b] = pq.top();
             pq.pop();
-            now[0] += 1;
-            now[1] += 1;
-            pq.push(now);
+
+            double diff = (double)(a + 2) / (b + 2) - (double)(a + 1) / (b + 1);
+            pq.push({diff, a + 1, b + 1});
         }
 
         double ans = 0;
         while (!pq.empty()) {
-            auto now = pq.top();
+            auto [_, a, b] = pq.top();
             pq.pop();
-            ans += (double)now[0] / now[1];
+            ans += (double)a / b;
         }
         return ans / classes.size();
     }
