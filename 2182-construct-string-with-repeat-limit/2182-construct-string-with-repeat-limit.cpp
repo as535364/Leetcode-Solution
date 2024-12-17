@@ -24,11 +24,12 @@ public:
                 popTwice = true;
                 lastCharRepeat = 0;
             }
-            if (pq.empty()) break;
+            if (popTwice && pq.empty()) break;
 
             auto [c, cnt] = pq.top();
             pq.pop();
             res += c;
+            if (c != lastChar) lastCharRepeat = 0;
 
             if (popTwice) {
                 pq.push({repeatChar, repeatCharCnt});
@@ -37,7 +38,6 @@ public:
             lastCharRepeat++;
 
             if (cnt > 1) pq.push({c, cnt - 1});
-            else lastCharRepeat = 0;
         }
         return res;
     }
