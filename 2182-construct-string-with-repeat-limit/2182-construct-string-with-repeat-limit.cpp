@@ -1,37 +1,33 @@
 class Solution {
 public:
     string repeatLimitedString(string s, int repeatLimit) {
-        vector<int> freq(26, 0);
-        for (char ch : s) {
-            freq[ch - 'a']++;
+        priority_queue<char> pq;
+        vector<int> freq(26);
+        for (char c : s) {
+            if (!freq[c - 'a']) pq.push(c);
+            ++freq[c - 'a'];
         }
+        
+        string res;
+        while (!pq.empty()) {
+            char c = pq.top();
+            cout << c << endl;
+            pq.pop();
+            int used = min(repeatLimit, freq[c - 'a']);
+            freq[c - 'a'] -= used;
+            res.append(used, c);
 
-        string result;
-        int currentCharIndex = 25;  // Start from the largest character
-        while (currentCharIndex >= 0) {
-            if (freq[currentCharIndex] == 0) {
-                currentCharIndex--;
-                continue;
-            }
+            if (pq.empty() || freq[c - 'a'] == 0) continue;
 
-            int use = min(freq[currentCharIndex], repeatLimit);
-            result.append(use, 'a' + currentCharIndex);
-            freq[currentCharIndex] -= use;
+            char next = pq.top();
+            cout << next << endl;
+            pq.pop();
+            freq[next - 'a']--;
+            res.append(1, next);
 
-            if (freq[currentCharIndex] >
-                0) {  // Need to add a smaller character
-                int smallerCharIndex = currentCharIndex - 1;
-                while (smallerCharIndex >= 0 && freq[smallerCharIndex] == 0) {
-                    smallerCharIndex--;
-                }
-                if (smallerCharIndex < 0) {
-                    break;
-                }
-                result.push_back('a' + smallerCharIndex);
-                freq[smallerCharIndex]--;
-            }
+            if (freq[c - 'a']) pq.push(c);
+            if (freq[next - 'a']) pq.push(next);
         }
-
-        return result;
+        return res;
     }
 };
