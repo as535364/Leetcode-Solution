@@ -1,44 +1,37 @@
 class Solution {
 public:
     string repeatLimitedString(string s, int repeatLimit) {
-        string res;
-        vector<int> cnt(26);
-        for (char c : s) cnt[c - 'a']++;
-
-        priority_queue<pair<char, int>> pq;
-        for (int i = 0; i < 26; ++i) {
-            if (cnt[i]) pq.push({i + 'a', cnt[i]});
+        vector<int> freq(26, 0);
+        for (char ch : s) {
+            freq[ch - 'a']++;
         }
-        
-        char lastChar = '-';
-        int lastCharRepeat = 0;
 
-        while (!pq.empty()) {
-            bool popTwice = false;
-            char repeatChar = '-';
-            int repeatCharCnt = 0;
-            if (pq.top().first == lastChar && lastCharRepeat == repeatLimit) {
-                repeatChar = pq.top().first;
-                repeatCharCnt = pq.top().second;
-                pq.pop();
-                popTwice = true;
-                lastCharRepeat = 0;
+        string result;
+        int currentCharIndex = 25;  // Start from the largest character
+        while (currentCharIndex >= 0) {
+            if (freq[currentCharIndex] == 0) {
+                currentCharIndex--;
+                continue;
             }
-            if (popTwice && pq.empty()) break;
 
-            auto [c, cnt] = pq.top();
-            pq.pop();
-            res += c;
-            if (c != lastChar) lastCharRepeat = 0;
+            int use = min(freq[currentCharIndex], repeatLimit);
+            result.append(use, 'a' + currentCharIndex);
+            freq[currentCharIndex] -= use;
 
-            if (popTwice) {
-                pq.push({repeatChar, repeatCharCnt});
+            if (freq[currentCharIndex] >
+                0) {  // Need to add a smaller character
+                int smallerCharIndex = currentCharIndex - 1;
+                while (smallerCharIndex >= 0 && freq[smallerCharIndex] == 0) {
+                    smallerCharIndex--;
+                }
+                if (smallerCharIndex < 0) {
+                    break;
+                }
+                result.push_back('a' + smallerCharIndex);
+                freq[smallerCharIndex]--;
             }
-            lastChar = c;
-            lastCharRepeat++;
-
-            if (cnt > 1) pq.push({c, cnt - 1});
         }
-        return res;
+
+        return result;
     }
 };
