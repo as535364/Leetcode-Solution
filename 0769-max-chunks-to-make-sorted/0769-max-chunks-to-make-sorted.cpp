@@ -3,20 +3,11 @@ private:
 
 public:
     int maxChunksToSorted(vector<int>& arr) {
-        stack<int> st;
-        for (int num : arr) {
-            int maxInSt = INT_MIN;
-            while (!st.empty() && st.top() > num) {
-                maxInSt = max(maxInSt, st.top());
-                st.pop();
-            }
-            if (maxInSt != INT_MIN) {
-                st.push(maxInSt);
-            }
-            else {
-                st.push(num);
-            }
+        int maxSoFar = -1, ans = 0;
+        for (int i = 0; i < arr.size(); ++i) {
+            maxSoFar = max(maxSoFar, arr[i]);
+            if (maxSoFar == i) ans++;
         }
-        return st.size();
+        return ans;
     }
 };
