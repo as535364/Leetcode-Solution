@@ -5,7 +5,7 @@ public:
         for (int num : arr) {
             int maxInSt = -1;
             while (!st.empty() && st.top() > num) {
-                maxInSt = max(maxInSt, num);
+                maxInSt = max(maxInSt, st.top());
                 st.pop();
             }
             if (maxInSt != -1) {
