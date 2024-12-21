@@ -1,12 +1,12 @@
 class Solution {
 private:
     bool check(const vector<vector<int>> &cord) {
-        int cnt = 1;
+        int cnt = cord.size();
         int s = cord[0][0], e = cord[0][1];
 
         for (int i = 1; i < cord.size(); ++i) {
-            if (e <= cord[i][0]) {
-                if(++cnt >= 3) return true;
+            if (e > cord[i][0]) {
+                --cnt; 
             }
             e = max(cord[i][1], e);
         }
