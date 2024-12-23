@@ -24,9 +24,9 @@ private:
             if (source[i] != target[i]) {
                 // source[i] at valIdx[source[i]]
                 // target[i] at valIdx[target[i]]
-                valIdx[source[i]] = valIdx[target[i]];
-                valIdx[target[i]] = i;
-                swap(source[valIdx[source[i]]], source[valIdx[target[i]]]);
+                int curPos = valIdx[target[i]];
+                valIdx[source[i]] = curPos;
+                swap(source[curPos], source[i]);
                 swapCount++;
             }
         }
