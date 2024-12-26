@@ -11,11 +11,11 @@ public:
         for (int i = 1; i < n; ++i) {
             for (int j = -maxn; j <= maxn; ++j) {
                 if (j - nums[i] >= -maxn)
-                    dp[i][j + maxn] += dp[i - 1][(j - nums[i]) + maxn];
+                    dp[i][j + maxn] += dp[(i - 1)][(j - nums[i]) + maxn];
                 if (j + nums[i] < maxn + 1)
-                    dp[i][j + maxn] += dp[i - 1][(j + nums[i]) + maxn];
+                    dp[i][j + maxn] += dp[(i - 1)][(j + nums[i]) + maxn];
             }
         }
-        return dp[n - 1][target + maxn];
+        return dp[(n - 1)][target + maxn];
     }
 };
