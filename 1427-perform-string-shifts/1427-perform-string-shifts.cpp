@@ -9,10 +9,6 @@ public:
             else start += amount;
         }
         start = ((start % n) + n) % n;
-        string res;
-        for (int i = start; res.length() < n; ++i) {
-            res += s[i % n];
-        }
-        return res;
+        return s.substr(start) + s.substr(0, start);
     }
 };
