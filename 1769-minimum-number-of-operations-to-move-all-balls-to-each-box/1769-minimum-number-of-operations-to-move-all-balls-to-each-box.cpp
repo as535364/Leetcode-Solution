@@ -5,15 +5,19 @@ public:
         vector<int> ans(n);
         
         int ballsLeft = 0, disLeftSum = 0;
-        int ballsRight = 0, disRightSum = 0;
-        for (int i = 0, j = n - 1; i < n; ++i, --j) {
+        for (int i = 0; i < n; ++i) {
             ans[i] += disLeftSum;
-            ans[j] += disRightSum;
             ballsLeft += (boxes[i] == '1');
             disLeftSum += ballsLeft;
-            ballsRight += (boxes[j] == '1');
+        }
+
+        int ballsRight = 0, disRightSum = 0;
+        for (int i = n - 1; i >= 0; --i) {
+            ans[i] += disRightSum;
+            ballsRight += (boxes[i] == '1');
             disRightSum += ballsRight;
         }
+
         return ans;
     }
 };
