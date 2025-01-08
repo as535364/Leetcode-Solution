@@ -1,7 +1,6 @@
 class Solution {
 private:
     bool isPrefixAndSuffix(const string &a, const string &b) {
-        using namespace std::literals;
         return b.starts_with(a) && b.ends_with(a);
     }
 public:
