@@ -1,0 +1,8 @@
+class Solution {
+public:
+    bool canConstruct(string s, int k) {
+        bitset<128> bs;
+        for (char c : s) bs.flip(c);
+        return bs.count() <= k;
+    }
+};
