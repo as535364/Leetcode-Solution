@@ -9,7 +9,6 @@ public:
             if (num1bit[i] && nums2BitCount-- > 0) {
                 numXorBit[i] = true;
             }
-            if (nums2BitCount <= 0) break;
         }
         if (nums2BitCount <= 0) return numXorBit.to_ulong();
 
@@ -17,7 +16,6 @@ public:
             if (!numXorBit[i] && nums2BitCount-- > 0) {
                 numXorBit[i] = true;
             }
-            if (nums2BitCount <= 0) break;
         }
         return numXorBit.to_ulong(); 
     }
