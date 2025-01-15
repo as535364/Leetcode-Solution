@@ -4,7 +4,6 @@ public:
         int l = 0, r = arr.size() - 1;
         while (l < r) {
             int m = l + (r - l) / 2;
-            // cout << l << ' ' << m << ' ' << r << endl;
             if (arr[m] > arr[m + 1]) { // right part
                 r = m;
             }
