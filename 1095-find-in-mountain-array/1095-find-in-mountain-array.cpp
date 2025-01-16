@@ -33,7 +33,7 @@ public:
             if (mountainArr.get(m) >= target) {
                 r = m;
             }
-            else { // left part
+            else {
                 l = m + 1;
             }
         }
@@ -46,7 +46,7 @@ public:
             if (mountainArr.get(m) <= target) {
                 r = m;
             }
-            else { // left part
+            else {
                 l = m + 1;
             }
         }
