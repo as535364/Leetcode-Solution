@@ -18,19 +18,18 @@ public:
             }
         }
 
-        vector<vector<bool>> vis(m, vector<bool>(n));
-        int level = 0;
+        int level = 1;
         while (!q.empty()) {
             int n = q.size();
             for (int i = 0; i < n; ++i) {
                 auto [x, y] = q.front();
                 q.pop();
-                if (grid[x][y] == '#') return level;
 
                 for (int dirI = 0; dirI < 4; ++dirI) {
                     int nx = x + dir[dirI][0], ny = y + dir[dirI][1];
-                    if (isValid(grid, nx, ny) && !vis[nx][ny]) {
-                        vis[nx][ny] = true;
+                    if (isValid(grid, nx, ny)) {
+                        if (grid[nx][ny] == '#') return level;
+                        grid[nx][ny] = 'X';
                         q.push({nx, ny});
                     }
                 }
