@@ -1,7 +1,6 @@
 class Solution {
 public:
     bool doesValidArrayExist(vector<int>& derived) {
-        int sum = accumulate(derived.begin(), derived.end(), 1);
-        return sum & 1;
+        return accumulate(derived.begin(), derived.end(), 1) & 1;
     }
 };
