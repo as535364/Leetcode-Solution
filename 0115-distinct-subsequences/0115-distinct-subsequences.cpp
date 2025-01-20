@@ -39,7 +39,7 @@ public:
         return dp[n];
     }
     */
-    // O(mn) O(2n)
+    // O(mn) O(n)
     int numDistinct(string s, string t) {
         int m = s.size(), n = t.size();
         vector<unsigned long long> dp(n + 1);
