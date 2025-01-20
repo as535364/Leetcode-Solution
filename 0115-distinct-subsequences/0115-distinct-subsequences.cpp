@@ -1,6 +1,7 @@
 class Solution {
 public:
-    /* O(mn) O(mn)
+    /*
+    // O(mn) O(mn)
     int numDistinct(string s, string t) {
         int m = s.size(), n = t.size();
         vector<vector<unsigned long long>> dp(m + 1, vector<unsigned long long>(n + 1));
@@ -19,7 +20,7 @@ public:
     }
     */
 
-
+    /*
     // O(mn) O(2n)
     int numDistinct(string s, string t) {
         int m = s.size(), n = t.size();
@@ -38,18 +39,19 @@ public:
         }
         return dp[n];
     }
+    */
 
     // O(mn) O(n)
-    // int numDistinct(string s, string t) {
-    //     int m = s.size(), n = t.size();
-    //     vector<unsigned long long> dp(n + 1);
+    int numDistinct(string s, string t) {
+        int m = s.size(), n = t.size();
+        vector<unsigned long long> dp(n + 1);
 
-    //     dp[0] = 1;
-    //     for (int i = 1; i <= m; ++i) {
-    //         for (int j = n; j >= 1; --j) {
-    //             if (s[i - 1] == t[j - 1]) dp[j] += dp[j - 1];
-    //         }
-    //     }
-    //     return dp[n];
-    // }
+        dp[0] = 1;
+        for (int i = 1; i <= m; ++i) {
+            for (int j = n; j >= 1; --j) {
+                if (s[i - 1] == t[j - 1]) dp[j] += dp[j - 1];
+            }
+        }
+        return dp[n];
+    }
 };
