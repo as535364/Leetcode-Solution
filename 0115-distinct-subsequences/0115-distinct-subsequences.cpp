@@ -11,7 +11,7 @@ public:
 
         for (int i = 1; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
-                if (s[i - 1] == t[j - 1]) dp[i][j] += dp[i - 1][j - 1] + dp[i - 1][j];
+                if (s[i - 1] == t[j - 1]) dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
                 else dp[i][j] = dp[i - 1][j];
             }
         }
@@ -19,7 +19,7 @@ public:
     }
     */
 
-    /*
+
     // O(mn) O(2n)
     int numDistinct(string s, string t) {
         int m = s.size(), n = t.size();
@@ -31,25 +31,25 @@ public:
             fill(dp.begin(), dp.end(), 0);
             dp[0] = 1;
             for (int j = 1; j <= n; ++j) {
-                if (s[i - 1] == t[j - 1]) dp[j] += prev[j - 1] + prev[j];
+                if (s[i - 1] == t[j - 1]) dp[j] = prev[j - 1] + prev[j];
                 else dp[j] = prev[j];
             }
             prev = dp;
         }
         return dp[n];
     }
-    */
-    // O(mn) O(n)
-    int numDistinct(string s, string t) {
-        int m = s.size(), n = t.size();
-        vector<unsigned long long> dp(n + 1);
 
-        dp[0] = 1;
-        for (int i = 1; i <= m; ++i) {
-            for (int j = n; j >= 1; --j) {
-                if (s[i - 1] == t[j - 1]) dp[j] += dp[j - 1];
-            }
-        }
-        return dp[n];
-    }
+    // O(mn) O(n)
+    // int numDistinct(string s, string t) {
+    //     int m = s.size(), n = t.size();
+    //     vector<unsigned long long> dp(n + 1);
+
+    //     dp[0] = 1;
+    //     for (int i = 1; i <= m; ++i) {
+    //         for (int j = n; j >= 1; --j) {
+    //             if (s[i - 1] == t[j - 1]) dp[j] += dp[j - 1];
+    //         }
+    //     }
+    //     return dp[n];
+    // }
 };
