@@ -1,38 +1,29 @@
 class Solution {
 public:
-    vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
+    vector<int> eventualSafeNodes(vector<vector<int>> &graph) {
         int n = graph.size();
+        vector<int> color(n);
 
-        vector<vector<int>> reverseAdj(n);
-        vector<int> deg(n);
-        for (int i = 0; i < graph.size(); ++i) {
-            for (int j = 0; j < graph[i].size(); ++j) {
-                int u = i, v = graph[i][j];
-                reverseAdj[v].push_back(u);
-                deg[u]++;
+        function<bool(int)> safe = [&](int x) {
+            if (color[x] > 0) {
+                return color[x] == 2;
             }
-        }
-
-        queue<int> q;
-        for (int i = 0; i < n; ++i) {
-            if (graph[i].empty()) q.push(i);
-        }
-
-        vector<bool> isSafe(n);
-        while (!q.empty()) {
-            int now = q.front(); q.pop();
-            isSafe[now] = true;
-            for (int neighbor : reverseAdj[now]) {
-                if(--deg[neighbor] == 0) {
-                    q.push(neighbor);
+            color[x] = 1;
+            for (int y : graph[x]) {
+                if (!safe(y)) {
+                    return false;
                 }
             }
-        }
+            color[x] = 2;
+            return true;
+        };
 
-        vector<int> res;
+        vector<int> ans;
         for (int i = 0; i < n; ++i) {
-            if (isSafe[i]) res.push_back(i);
+            if (safe(i)) {
+                ans.push_back(i);
+            }
         }
-        return res;
+        return ans;
     }
 };
