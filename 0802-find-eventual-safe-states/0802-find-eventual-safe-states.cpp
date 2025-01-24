@@ -18,10 +18,10 @@ public:
             if (graph[i].empty()) q.push(i);
         }
 
-        vector<int> res;
+        vector<bool> isSafe(n);
         while (!q.empty()) {
             int now = q.front(); q.pop();
-            res.push_back(now);
+            isSafe[now] = true;
             for (int neighbor : reverseAdj[now]) {
                 if(--deg[neighbor] == 0) {
                     q.push(neighbor);
@@ -29,7 +29,10 @@ public:
             }
         }
 
-        sort(res.begin(), res.end());
+        vector<int> res;
+        for (int i = 0; i < n; ++i) {
+            if (isSafe[i]) res.push_back(i);
+        }
         return res;
     }
 };
