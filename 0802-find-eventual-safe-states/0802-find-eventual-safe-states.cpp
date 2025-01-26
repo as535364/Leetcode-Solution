@@ -1,29 +1,29 @@
 class Solution {
+private:
+    vector<int> vis, inStack;
+    bool inCycle(const vector<vector<int>> &graph, int x) {
+        if (inStack[x]) return true;
+        if (vis[x]) return false;
+
+        inStack[x] = vis[x] = true;
+        for (int neighbor : graph[x]) {
+            if (inCycle(graph, neighbor)) return true;
+        }
+        
+        inStack[x] = false;
+        return false;
+    }
 public:
     vector<int> eventualSafeNodes(vector<vector<int>> &graph) {
         int n = graph.size();
-        vector<int> color(n);
+        vis.resize(n);
+        inStack.resize(n);
 
-        function<bool(int)> safe = [&](int x) {
-            if (color[x] > 0) {
-                return color[x] == 2;
-            }
-            color[x] = 1;
-            for (int y : graph[x]) {
-                if (!safe(y)) {
-                    return false;
-                }
-            }
-            color[x] = 2;
-            return true;
-        };
-
-        vector<int> ans;
+        vector<int> res;
         for (int i = 0; i < n; ++i) {
-            if (safe(i)) {
-                ans.push_back(i);
-            }
+            if (!inCycle(graph, i)) res.push_back(i);
         }
-        return ans;
+        return res;
+
     }
 };
