@@ -16,11 +16,14 @@ public:
                     dp[i].second += dp[j].second;
                 }
             }
-            maxLen = max(maxLen, dp[i].first);
-        }
 
-        for (int i = 0; i < n; ++i) {
-            if (dp[i].first == maxLen) maxLenCnt += dp[i].second;
+            if (maxLen < dp[i].first) {
+                maxLen = dp[i].first;
+                maxLenCnt = dp[i].second;
+            }
+            else if (maxLen == dp[i].first) {
+                maxLenCnt += dp[i].second;
+            }
         }
         return maxLenCnt;
     }
