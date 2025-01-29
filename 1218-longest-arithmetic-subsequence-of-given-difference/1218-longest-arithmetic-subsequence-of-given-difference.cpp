@@ -5,8 +5,13 @@ public:
         unordered_map<int, int> dp;
         for (int i = 0; i < n; ++i) {
             int target = arr[i] - difference;
-            int prevTargetMax = dp.find(target) == dp.end() ? 0 : dp[target];
-            dp[arr[i]] = prevTargetMax + 1;
+            auto prevTargetMaxIt = dp.find(target);
+            if (prevTargetMaxIt == dp.end()) {
+                dp[arr[i]] = 1;
+            }
+            else {
+                dp[arr[i]] = prevTargetMaxIt -> second + 1;
+            }
             ans = max(ans, dp[arr[i]]);
         }
         return ans;
