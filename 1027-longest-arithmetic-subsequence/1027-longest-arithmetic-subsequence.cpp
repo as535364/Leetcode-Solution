@@ -22,10 +22,11 @@ public:
     // iterate all nums[i]
     int longestArithSeqLength(vector<int>& nums) {
         int n = nums.size(), ans = 2;
-        vector<vector<int>> dp(n, vector<int>(1001));
+        int bound = *max_element(begin(nums), end(nums));
+        vector<vector<int>> dp(n, vector<int>(2 * bound + 1));
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < i; ++j) {
-                int d = nums[i] - nums[j] + 500;
+                int d = nums[i] - nums[j] + bound;
                 dp[i][d] = max(2, dp[j][d] + 1);
                 ans = max(ans, dp[i][d]);
             }
