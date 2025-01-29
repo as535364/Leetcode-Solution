@@ -4,8 +4,7 @@ public:
         int n = arr.size(), ans = 1;
         unordered_map<int, int> dp;
         for (int i = 0; i < n; ++i) {
-            int target = arr[i] - difference;
-            auto prevTargetMaxIt = dp.find(target);
+            auto prevTargetMaxIt = dp.find(arr[i] - difference);
             if (prevTargetMaxIt == dp.end()) {
                 dp[arr[i]] = 1;
             }
