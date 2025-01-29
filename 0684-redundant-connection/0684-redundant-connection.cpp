@@ -28,8 +28,8 @@ public:
         DSU dsu(edges.size() + 1);
         for (const auto &e : edges) {
             int a = e[0], b = e[1];
-            if (!dsu.merge(a, b)) return {a, b};
+            if (!dsu.merge(a, b)) return e;
         }
-        return {-1, -1};
+        return {};
     }
 };
