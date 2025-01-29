@@ -22,13 +22,54 @@ public:
         return true;
     }
 };
+
 class Solution {
+private:
+    int cycleStart = -1;
+    void dfs(int src, vector<vector<int>>& graph, vector<int>& parent) {
+        for (int neighbor : graph[src]) {
+            if (parent[neighbor] == -1) {
+                parent[neighbor] = src;
+                dfs(neighbor, graph, parent);
+            }
+            else if (parent[src] != neighbor && cycleStart == -1) {
+                cycleStart = neighbor;
+                parent[neighbor] = src;
+            }
+        }
+    }
 public:
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
-        DSU dsu(edges.size() + 1);
+        // DSU dsu(edges.size() + 1);
+        // for (const auto &e : edges) {
+        //     int a = e[0], b = e[1];
+        //     if (!dsu.merge(a, b)) return e;
+        // }
+        // return {};
+
+
+        // dfs
+        int n = edges.size();
+        vector<vector<int>> graph(n + 1);
+        vector<int> parent(n + 1, -1);
+
         for (const auto &e : edges) {
             int a = e[0], b = e[1];
-            if (!dsu.merge(a, b)) return e;
+            graph[a].push_back(b);
+            graph[b].push_back(a);
+        }
+        
+        dfs(1, graph, parent);
+        unordered_set<int> nodesInCycle;
+        int node = cycleStart;
+        do {
+            nodesInCycle.insert(node);
+            node = parent[node];
+        } while (node != cycleStart);
+
+        for (int i = n - 1; i >= 0; --i) {
+            int a = edges[i][0], b = edges[i][1];
+            if (nodesInCycle.count(a) && nodesInCycle.count(b)) return edges[i];
         }
         return {};
     }
