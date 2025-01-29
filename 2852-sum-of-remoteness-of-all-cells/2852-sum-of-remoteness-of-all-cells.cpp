@@ -38,7 +38,6 @@ public:
                 if (grid[i][j] != -1 && !vis[i][j]) {
                     vis[i][j] = true;
                     auto [componentSum, componentCount] = dfs(i, j, grid);
-                    cout << componentSum << ' ' << componentCount << endl;
                     res += (sum - componentSum) * componentCount;
                 }
             }
