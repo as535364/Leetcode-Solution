@@ -7,12 +7,12 @@ public:
 
         for (int a : nums) {
             for (int diff = -bound; diff <= bound; ++diff) {
-                int beforeA = 0;
+                int beforeA = 0, d = diff + bound;
                 if (a - diff >= 0 && a - diff <= bound) {
-                    beforeA = dp[a - diff][diff + bound];
+                    beforeA = dp[a - diff][d];
                 }
-                dp[a][diff + bound] = beforeA + 1;
-                ans = max(ans, dp[a][diff + bound]);
+                dp[a][d] = beforeA + 1;
+                ans = max(ans, dp[a][d]);
             }
         }
         return ans;
