@@ -35,10 +35,13 @@ public:
         int m = grid.size(), n = grid[0].size();
         DSU dsu(m * n);
         int res = 0;
-
+        bool hasZero = false;
         for (int r = 0; r < m; ++r) {
             for (int c = 0; c < n; ++c) {
-                if (!grid[r][c]) continue;
+                if (!grid[r][c]) {
+                    hasZero = true;
+                    continue;
+                }
                 for (auto &d : dir) {
                     int nr = r + d[0], nc = c + d[1];
                     if (!isValid(nr, nc, m, n, grid)) continue;
@@ -47,7 +50,8 @@ public:
                 res = max(res, dsu.findSize(r * m + c));
             }
         }
-
+        if (!hasZero) return res;
+        
         for (int r = 0; r < m; ++r) {
             for (int c = 0; c < n; ++c) {
                 if (grid[r][c]) continue;
