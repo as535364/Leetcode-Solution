@@ -34,6 +34,8 @@ public:
     int largestIsland(vector<vector<int>>& grid) {
         int m = grid.size(), n = grid[0].size();
         DSU dsu(m * n);
+        int res = 0;
+
         for (int r = 0; r < m; ++r) {
             for (int c = 0; c < n; ++c) {
                 if (!grid[r][c]) continue;
@@ -42,16 +44,13 @@ public:
                     if (!isValid(nr, nc, m, n, grid)) continue;
                     dsu.merge(r * m + c, nr * m + nc);
                 }
+                res = max(res, dsu.findSize(r * m + c));
             }
         }
 
-        int res = 0;
         for (int r = 0; r < m; ++r) {
             for (int c = 0; c < n; ++c) {
-                if (grid[r][c]) {
-                    res = max(res, dsu.findSize(r * m + c));
-                    continue;
-                }
+                if (grid[r][c]) continue;
                 unordered_set<int> uniqueRoot;
                 for (auto &d : dir) {
                     int nr = r + d[0], nc = c + d[1];
