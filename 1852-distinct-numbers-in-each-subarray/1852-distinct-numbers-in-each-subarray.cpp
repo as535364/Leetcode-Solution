@@ -1,17 +1,20 @@
 class Solution {
 public:
     vector<int> distinctNumbers(vector<int>& nums, int k) {
-        int n = nums.size();
+        int n = nums.size(), maxNumber = *max_element(nums.begin(), nums.end());
         vector<int> res(n - k + 1);
-        unordered_map<int, int> counts;
+        vector<int> counts(maxNumber + 1);
 
-        for (int i = 0; i < k; ++i) ++counts[nums[i]];
-        res[0] = counts.size();
+        int distinctCount = 0;
+        for (int i = 0; i < k; ++i) {
+            if(++counts[nums[i]] == 1) ++distinctCount;
+        }
+        res[0] = distinctCount;
 
         for (int i = k; i < n; ++i) {
-            ++counts[nums[i]];
-            if (--counts[nums[i - k]] == 0) counts.erase(nums[i - k]);
-            res[i - k + 1] = counts.size();
+            if(++counts[nums[i]] == 1) ++distinctCount;
+            if (--counts[nums[i - k]] == 0) --distinctCount;
+            res[i - k + 1] = distinctCount;
         }
         return res;
     }
