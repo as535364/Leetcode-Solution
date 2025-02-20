@@ -1,28 +1,18 @@
 class Solution {
-private:
-    unordered_set<string> vis;
-    string res;
-
-    void dfs(int idx, string& tmp, int n) {
-        if (idx == n) {
-            if (!vis.count(tmp)) {
-                res = tmp;
-            }
-            return;
-        }
-        if (!res.empty()) return;
-        tmp += "0";
-        dfs(idx + 1, tmp, n);
-        tmp.pop_back();
-        tmp += "1";
-        dfs(idx + 1, tmp, n);
-        tmp.pop_back();
-    }
 public:
     string findDifferentBinaryString(vector<string>& nums) {
-        string tmp;
-        vis = unordered_set<string>(nums.begin(), nums.end());
-        dfs(0, tmp, nums[0].length());
-        return res;
+        unordered_set<int> integers;
+        for (string num : nums) {
+            integers.insert(stoi(num, 0, 2));
+        }
+        
+        int ans = stoi(nums[0], 0, 2);
+        int n = nums.size();
+        
+        while (integers.find(ans) != integers.end()) {
+            ans = rand() % (int) pow(2, n);
+        }
+        
+        return bitset<16>(ans).to_string().substr(16 - n);
     }
 };
