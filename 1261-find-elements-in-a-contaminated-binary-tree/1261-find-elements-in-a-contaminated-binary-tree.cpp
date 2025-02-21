@@ -11,14 +11,15 @@
  */
 class FindElements {
 private:
-    TreeNode *root;
+    unordered_set<int> seen;
 public:
-    FindElements(TreeNode* root): root(root) {
+    FindElements(TreeNode* root) {
         stack<TreeNode*> st;
         root -> val = 0;
         st.push(root);
         while (!st.empty()) {
             TreeNode *node = st.top(); st.pop();
+            seen.insert(node -> val);
             if (node -> left) {
                 node -> left -> val = node -> val * 2 + 1;
                 st.push(node -> left);
@@ -31,19 +32,7 @@ public:
     }
     
     bool find(int target) {
-        stack<TreeNode*> st;
-        st.push(root);
-        while (!st.empty()) {
-            TreeNode *node = st.top(); st.pop();
-            if (node -> val == target) return true;
-            if (node -> left) {
-                st.push(node -> left);
-            }
-            if (node -> right) {
-                st.push(node -> right);
-            }
-        }
-        return false;
+        return seen.find(target) != seen.end();
     }
 };
 
