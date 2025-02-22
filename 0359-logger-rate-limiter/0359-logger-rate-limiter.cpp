@@ -1,21 +1,18 @@
 class Logger {
 private:
-    unordered_map<string, int> messageLastPrintTime;
+    unordered_map<string, int> lastPrint;
 public:
     Logger() {
         
     }
     
     bool shouldPrintMessage(int timestamp, string message) {
-        auto it = messageLastPrintTime.find(message);
-        if (it == messageLastPrintTime.end() || 
-                    messageLastPrintTime[message] + 10 <= timestamp) {
-            messageLastPrintTime[message] = timestamp;
+        auto it = lastPrint.find(message);
+        if (it == lastPrint.end() || timestamp - it -> second >= 10) {
+            lastPrint[message] = timestamp;
             return true;
         }
-        else {
-            return false;
-        }
+        return false;
     }
 };
 
