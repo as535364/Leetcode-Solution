@@ -6,11 +6,11 @@ public:
         // odd[i] end with idx i, number
         // even[i] end with idx i, number
         int n = arr.size();
-        int odd = (arr[0] % 2 == 1), even = (arr[0] % 2 == 0);
+        int odd = arr[0] & 1, even = (arr[0] & 1) == 0;
         int res = odd;
         for (int i = 1; i < arr.size(); ++i) {
             int prevOdd = odd, prevEven = even;
-            if (arr[i] % 2) { // odd
+            if (arr[i] & 1) { // odd
                 odd = (prevEven + 1) % mod;
                 even = prevOdd;
             }
