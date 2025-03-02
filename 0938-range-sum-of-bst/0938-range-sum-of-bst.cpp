@@ -10,19 +10,14 @@
  * };
  */
 class Solution {
-private:
-    int sum = 0, low_, high_;
-    void dfs(TreeNode *node) {
-        if (node == nullptr) return;
-        if (low_ <= node -> val && node -> val <= high_) sum += node -> val;
-        dfs(node -> left);
-        dfs(node -> right);
-    }
 public:
     int rangeSumBST(TreeNode* root, int low, int high) {
-        low_ = low;
-        high_ = high;
-        dfs(root);
-        return sum;
+        int ans = 0;
+        if(low <= root -> val && root -> val <= high){
+            ans += root -> val;
+        }
+        if(root -> left && root -> val >= low)ans += rangeSumBST(root -> left, low, high);
+        if(root -> right && root -> val <= high)ans += rangeSumBST(root -> right, low, high);
+        return ans;
     }
 };
