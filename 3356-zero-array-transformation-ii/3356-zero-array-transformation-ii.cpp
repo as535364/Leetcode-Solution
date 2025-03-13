@@ -30,7 +30,7 @@ public:
                 l = m + 1;
             }
         }
-        return r == queries.size() ? -1 : r + 1;
+        return r == queries.size() ? -1 : l;
     }
 };
 // [7,6,8]
