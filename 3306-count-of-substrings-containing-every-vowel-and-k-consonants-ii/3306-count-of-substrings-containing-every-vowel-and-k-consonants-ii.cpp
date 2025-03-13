@@ -6,21 +6,23 @@ private:
 
     long long atLeastKConsonants(const string &word, int k) {
         long long res = 0;
-        int consonantsCnt = 0, left = 0;
-        unordered_map<char, int> vowelCnt;
+        int vowelSize = 0, consonantsCnt = 0, left = 0;
+        vector<int> vowelCnt(26);
 
         for (char c : word) {
             if (isVowel(c)) {
-                ++vowelCnt[c];
+                ++vowelCnt[c - 'a'];
+                if (vowelCnt[c - 'a'] == 1) vowelSize++;
             }
             else {
                 ++consonantsCnt;
             }
 
-            while (vowelCnt.size() == 5 && consonantsCnt >= k) {
+            while (vowelSize == 5 && consonantsCnt >= k) {
                 char remove = word[left];
-                if (isVowel(remove) && --vowelCnt[remove] == 0) {
-                    vowelCnt.erase(remove);
+                if (isVowel(remove)) {
+                    --vowelCnt[remove - 'a'];
+                    if (vowelCnt[remove - 'a'] == 0) vowelSize--;
                 }
                 else {
                     --consonantsCnt;
