@@ -4,6 +4,7 @@ private:
         long long cnt = 0;
         for (int c : candies) {
             cnt += c / maximumCandy;
+            if (cnt >= k) return true;
         }
         return cnt >= k;
     }
