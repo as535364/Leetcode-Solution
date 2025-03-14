@@ -6,7 +6,7 @@ private:
             cnt += c / maximumCandy;
             if (cnt >= k) return true;
         }
-        return cnt >= k;
+        return false;
     }
 public:
     int maximumCandies(vector<int>& candies, long long k) {
