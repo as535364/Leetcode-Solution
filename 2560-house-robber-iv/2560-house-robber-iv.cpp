@@ -11,7 +11,7 @@ private:
         return cnt >= k;
     }
 public:
-    inline int minCapability(vector<int>& nums, int k) {
+    int minCapability(vector<int>& nums, int k) {
         int left = 0, right = *max_element(nums.begin(), nums.end());
         while (left <= right) {
             int mid = left + (right - left) / 2;
