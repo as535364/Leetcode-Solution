@@ -1,12 +1,14 @@
 class Solution {
 public:
     bool divideArray(vector<int>& nums) {
-        vector<int> cnt(501);
-        for (int num : nums) {
-            cnt[num]++;
-        }
-        for (int i = 1; i <= 500; ++i) {
-            if (cnt[i] & 1) return false;
+        sort(nums.begin(), nums.end());
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] == nums[i + 1]) {
+                ++i;
+            }
+            else {
+                return false;
+            }
         }
         return true;
     }
