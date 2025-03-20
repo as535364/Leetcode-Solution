@@ -38,8 +38,7 @@ public:
         for(const auto &e : edges) {
             int u = e[0], v = e[1], w = e[2];
             int p = dsu.find(u);
-            if (componentCost[p] == -1) componentCost[p] = w;
-            else componentCost[p] &= w;
+            componentCost[p] &= w;
         }
 
         vector<int> ans(query.size());
