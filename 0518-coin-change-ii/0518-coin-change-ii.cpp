@@ -17,7 +17,25 @@ private:
     }
 public:
     int change(int amount, vector<int>& coins) {
-        dp = vector<vector<int>>(coins.size(), vector<int>(amount + 1, -1));
-        return waysToAmount(0, amount, coins);
+        // dp = vector<vector<int>>(coins.size() + 1, vector<int>(amount + 1, -1));
+        vector<vector<unsigned long long>> dp(coins.size() + 1, vector<unsigned long long>(amount + 1));
+        int n = coins.size();
+
+        for (int i = 0; i <= n; ++i) {
+            dp[i][0] = 1;
+        }
+
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= amount; ++j) {
+                int coin = coins[i - 1];
+                if (coin > j) {
+                    dp[i][j] = dp[i - 1][j];
+                }
+                else {
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - coin];
+                }
+            }
+        }
+        return dp[n][amount];
     }
 };
