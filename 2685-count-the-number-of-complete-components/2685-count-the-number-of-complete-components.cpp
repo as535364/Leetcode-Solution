@@ -1,13 +1,9 @@
 class DSU {
 public:
     vector<int> rank, parent;
-    DSU(int n) {
-        rank.resize(n, 1);
-        parent.resize(n);
-        for (int i = 0; i < n; ++i) parent[i] = i;
-    }
+    DSU(int n): rank(n, 1), parent(n, -1) {}
     int find(int x) {
-        if (x == parent[x]) return x;
+        if (parent[x] == -1) return x;
         return parent[x] = find(parent[x]);
     }
     bool merge (int x, int y) {
