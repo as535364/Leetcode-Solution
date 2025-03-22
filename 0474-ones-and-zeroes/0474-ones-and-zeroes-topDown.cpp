@@ -12,7 +12,7 @@ private:
             dp[idx][m][n] = notPick;
         }
         else {
-            int pick = pick = topDown(idx + 1, m - zeroCnt, n - oneCnt, s) + 1;
+            int pick = topDown(idx + 1, m - zeroCnt, n - oneCnt, s) + 1;
             dp[idx][m][n] = max(notPick, pick);
         }
         return dp[idx][m][n];
