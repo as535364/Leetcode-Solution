@@ -3,7 +3,6 @@ private:
     const int inf = 1e9;
 public:
     int minimumDistance(int n, vector<vector<int>>& edges, int s, vector<int>& marked) {
-        unordered_set<int> markedSet(marked.begin(), marked.end());
         vector<vector<int>> graph(n, vector<int>(n, inf));
         vector<int> dis(n, inf);
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
@@ -17,7 +16,6 @@ public:
         dis[s] = 0;
         while (!pq.empty()) {
             auto [nodeDis, node] = pq.top(); pq.pop();
-            if (markedSet.find(node) != markedSet.end()) return nodeDis;
             for (int i = 0; i < n; ++i) {
                 if (nodeDis + graph[node][i] < dis[i]) {
                     dis[i] = nodeDis + graph[node][i];
@@ -25,6 +23,11 @@ public:
                 }
             }
         }
-        return -1;
+
+        int res = inf;
+        for (int m : marked) {
+            res = min(res, dis[m]);
+        }
+        return res == inf ? -1 : res;
     }
 };
