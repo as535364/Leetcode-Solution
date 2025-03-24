@@ -1,21 +1,20 @@
 class Solution {
 public:
     int countDays(int days, vector<vector<int>>& meetings) {
-        vector<vector<int>> merged;
-
         sort(meetings.begin(), meetings.end());
+        int lastEnd = -1;
         for (const auto &meeting : meetings) {
-            if (merged.empty() || merged.back()[1] < meeting[0]) {
-                merged.push_back(meeting);
+            int start = meeting[0], end = meeting[1];
+            if (lastEnd == -1 || lastEnd < start) {
+                days -= end - start + 1;
+                lastEnd = end;
             }
-            else {
-                merged.back()[1] = max(merged.back()[1], meeting[1]);
+            else if (lastEnd < end) {
+                days -= end - lastEnd;
+                lastEnd = end;
             }
         }
 
-        for (const auto &meeting : merged) {
-            days -= meeting[1] - meeting[0] + 1;
-        }
         return days;
     }
 };
