@@ -3,7 +3,7 @@ public:
     int minimumIndex(vector<int>& nums) {
         int n = nums.size();
         
-        int dominant = -1, dominantCnt = 1;
+        int dominant = nums[0], dominantCnt = 0;
         for (int num : nums) {
             if (dominant == num) {
                 dominantCnt++;
