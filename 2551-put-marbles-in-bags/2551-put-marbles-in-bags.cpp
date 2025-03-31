@@ -2,6 +2,7 @@ class Solution {
 public:
     long long putMarbles(vector<int>& weights, int k) {
         int n = weights.size();
+        if(k == 1 || k == n) return 0;
         vector<int> possibleCost(n - 1);
         for (int i = 1; i < n; ++i) {
             possibleCost[i - 1] = weights[i - 1] + weights[i];
