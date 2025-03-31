@@ -1,17 +1,26 @@
 class Solution {
 private:
-    const long long maxVal = 1LL << 48;
+    const long long MAX_VAL = LLONG_MAX / 2;
 public:
     long long maxSubarraySum(vector<int>& nums, int k) {
-        vector<long long> preMin(k, maxVal);
-        preMin[k - 1] = 0;
+        // loop i
+        // i % k
+        // preMin[k]
 
-        long long res = -maxVal, pre = 0;
+        // preMin[2]
+        // 0: -5
+        // 1: -4
+        // ans: 3
+
+        vector<long long> preMin(k, MAX_VAL);
+        preMin.back() = 0;
+
+        long long prefixSum = 0, ans = -MAX_VAL;
         for (int i = 0; i < nums.size(); ++i) {
-            pre += nums[i];
-            res = max(res, pre - preMin[i % k]);
-            preMin[i % k] = min(preMin[i % k], pre);
+            prefixSum += nums[i];
+            ans = max(ans, prefixSum - preMin[i % k]);
+            preMin[i % k] = min(preMin[i % k], prefixSum);
         }
-        return res;
+        return ans;
     }
 };
