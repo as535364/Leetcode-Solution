@@ -7,15 +7,36 @@ public:
         vector<vector<int>> dp(2, vector<int>(k, inf));
         dp[0] = costs[0];
 
-        for (int i = 1; i < n; ++i) {
-            for (int j = 0; j < k; ++j) {
-                int res = inf;
-                for (int l = 0; l < k; ++l) {
-                    if (j == l) continue;
-                    res = min(res, dp[(i - 1) % 2][l]);
-                }
-                dp[i % 2][j] = res + costs[i][j];
+        int prevBest = inf, prevBestIdx = -1, prevSecondBest = inf;
+        for (int i = 0; i < k; ++i) {
+            if (dp[0][i] <= prevBest) {
+                prevSecondBest = prevBest;
+                prevBest = dp[0][i];
+                prevBestIdx = i;
             }
+            else if (dp[0][i] <= prevSecondBest) {
+                prevSecondBest = dp[0][i];
+            }
+        }
+
+        for (int i = 1; i < n; ++i) {
+            int nowBest = inf, nowBestIdx = -1, nowSecondBest = inf;
+            for (int j = 0; j < k; ++j) {
+                if (j != prevBestIdx) dp[i % 2][j] = prevBest + costs[i][j];
+                else dp[i % 2][j] = prevSecondBest + costs[i][j];
+
+                if (dp[i % 2][j] <= nowBest) {
+                    nowSecondBest = nowBest;
+                    nowBest = dp[i % 2][j];
+                    nowBestIdx = j;
+                }
+                else if (dp[i % 2][j] <= nowSecondBest) {
+                    nowSecondBest = dp[i % 2][j];
+                }
+            }
+            prevBest = nowBest;
+            prevBestIdx = nowBestIdx;
+            prevSecondBest = nowSecondBest;
         }
         return *min_element(dp[(n - 1) % 2].begin(), dp[(n - 1) % 2].end());
     }
