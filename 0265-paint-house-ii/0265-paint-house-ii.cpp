@@ -1,43 +1,40 @@
 class Solution {
-private:
-    const int inf = INT_MAX >> 1;
 public:
     int minCostII(vector<vector<int>>& costs) {
         int n = costs.size(), k = costs[0].size();
-        vector<vector<int>> dp(2, vector<int>(k, inf));
-        dp[0] = costs[0];
+        if (n == 1) return *min_element(costs[0].begin(), costs[0].end());
 
-        int prevBest = inf, prevBestIdx = -1, prevSecondBest = inf;
-        for (int i = 0; i < k; ++i) {
-            if (dp[0][i] <= prevBest) {
-                prevSecondBest = prevBest;
-                prevBest = dp[0][i];
-                prevBestIdx = i;
+        int prevMinColor = -1, prevMinCost = INT_MAX, prevSecondCost = INT_MAX;
+
+        for (int j = 0; j < k; ++j) {
+            if (prevMinColor == -1 || prevMinCost > costs[0][j]) {
+                prevSecondCost = prevMinCost;
+                prevMinCost = costs[0][j];
+                prevMinColor = j;
             }
-            else if (dp[0][i] <= prevSecondBest) {
-                prevSecondBest = dp[0][i];
+            else if (prevSecondCost > costs[0][j]) {
+                prevSecondCost = costs[0][j];
             }
         }
 
         for (int i = 1; i < n; ++i) {
-            int nowBest = inf, nowBestIdx = -1, nowSecondBest = inf;
+            int minColor = -1, minCost = INT_MAX, secondCost = INT_MAX;
             for (int j = 0; j < k; ++j) {
-                if (j != prevBestIdx) dp[i % 2][j] = prevBest + costs[i][j];
-                else dp[i % 2][j] = prevSecondBest + costs[i][j];
-
-                if (dp[i % 2][j] <= nowBest) {
-                    nowSecondBest = nowBest;
-                    nowBest = dp[i % 2][j];
-                    nowBestIdx = j;
+                int cost = (prevMinColor == j ? prevSecondCost : prevMinCost) + costs[i][j];
+                
+                if (minColor == -1 || minCost > cost) {
+                    secondCost = minCost;
+                    minCost = cost;
+                    minColor = j;
                 }
-                else if (dp[i % 2][j] <= nowSecondBest) {
-                    nowSecondBest = dp[i % 2][j];
+                else if (secondCost > cost) {
+                    secondCost = cost;
                 }
             }
-            prevBest = nowBest;
-            prevBestIdx = nowBestIdx;
-            prevSecondBest = nowSecondBest;
+            prevMinCost = minCost;
+            prevMinColor = minColor;
+            prevSecondCost = secondCost;
         }
-        return prevBest;
+        return prevMinCost;
     }
 };
