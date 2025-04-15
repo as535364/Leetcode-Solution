@@ -1,38 +1,36 @@
 class NumArray {
+private:
+    vector<int> tree;
+    int n;
+
+    int prefixSum(int index) {
+        int res = 0;
+        while (index > 0) {
+            res += tree[index];
+            index -= index & -index;
+        }
+        return res;
+    }
 public:
-    NumArray(vector<int>& nums) {
-        bit.resize(nums.size() + 1);
-        n = nums.size();
-        for(int i = 0; i < n; ++i){
-            add(i + 1, nums[i]);
+    NumArray(vector<int>& nums): n(nums.size()) {
+        tree.resize(n + 1);
+        for (int i = 0; i < n; ++i) {
+            update(i, nums[i]);
         }
     }
     
     void update(int index, int val) {
         int diff = val - sumRange(index, index);
-        add(index + 1, diff);
+        index++;
+        while (index <= n) {
+            tree[index] += diff;
+            index += index & -index;
+        }
     }
     
     int sumRange(int left, int right) {
-        return sum(right + 1) - sum(left);
+        return prefixSum(right + 1) - prefixSum(left);
     }
-    int lowbit(int x){
-        return x & -x;
-    }
-    int sum(int idx){
-        int res = 0;
-        for(int i = idx; i > 0; i -= lowbit(i)){
-            res += bit[i];
-        }
-        return res;
-    }
-    void add(int idx, int val){
-        for(int i = idx; i <= n; i += lowbit(i)){
-            bit[i] += val;
-        }
-    }
-    int n;
-    vector<int> bit;
 };
 
 /**
