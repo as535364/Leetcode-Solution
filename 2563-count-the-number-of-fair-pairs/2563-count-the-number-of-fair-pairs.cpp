@@ -10,7 +10,7 @@ public:
             auto leftBound = next(nums.begin(), i + 1);
             int right = upper_bound(leftBound, nums.end(), upper - nums[i]) - nums.begin();
             int left = lower_bound(leftBound, nums.end(), lower - nums[i]) - nums.begin();
-            fairPairs += max(0, right - left);
+            fairPairs += right - left;
         }
         return fairPairs;
     }
