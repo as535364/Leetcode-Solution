@@ -10,17 +10,16 @@ private:
 public:
     int countLargestGroup(int n) {
         unordered_map<int, int> digitsGroupsize;
+        int resSize = 0;
         for (int i = 1; i <= n; ++i) {
             int d = digit(i);
             ++digitsGroupsize[d];
+            resSize = max(resSize, digitsGroupsize[d]);
         }
-        int resSize = 0, resCnt = 0;
-        for (auto [d, size] : digitsGroupsize) {
-            if (size > resSize) {
-                resSize = size;
-                resCnt = 1;
-            }
-            else if (size == resSize) {
+        
+        int resCnt = 0;
+        for (auto [_, size] : digitsGroupsize) {
+            if (size == resSize) {
                 ++resCnt;
             }
         }
