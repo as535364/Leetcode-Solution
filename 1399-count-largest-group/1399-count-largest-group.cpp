@@ -1,6 +1,6 @@
 class Solution {
 private:
-    int digit(int x) {
+    inline int digit(int x) {
         int sum = x % 10;
         while (x /= 10) {
             sum += x % 10;
