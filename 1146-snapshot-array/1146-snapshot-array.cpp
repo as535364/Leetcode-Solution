@@ -1,15 +1,17 @@
 class SnapshotArray {
 private:
-    map<int, unordered_map<int, int>> snapVal;
+    unordered_map<int, map<int, int>> changeVal;
     int time;
     
 public:
     SnapshotArray(int length): time(0) {
-        
+        for (int i = 0; i < length; ++i) {
+            changeVal[i][0] = 0;
+        }
     }
     
     void set(int index, int val) {
-        snapVal[time][index] = val;
+        changeVal[index][time] = val;
     }
     
     int snap() {
@@ -17,16 +19,8 @@ public:
     }
     
     int get(int index, int snap_id) {
-        auto timeIt = snapVal.upper_bound(snap_id);
-        if (timeIt == snapVal.begin()) return 0;
-        
-        while (timeIt != snapVal.begin()) {
-            auto valIt = prev(timeIt) -> second.find(index);
-            if (valIt != prev(timeIt) -> second.end()) return valIt -> second;
-            advance(timeIt, -1);
-        }
-        return 0;
-
+        auto it = changeVal[index].upper_bound(snap_id);
+        return prev(it) -> second;
     }
 };
 
