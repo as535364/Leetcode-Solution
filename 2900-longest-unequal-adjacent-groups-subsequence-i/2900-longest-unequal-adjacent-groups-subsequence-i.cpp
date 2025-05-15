@@ -6,7 +6,7 @@ public:
 
         for (int i = 1; i < n; ++i) {
             if (groups[i] != groups[i - 1]) {
-                res.push_back(words[i]);
+                res.emplace_back(words[i]);
             }
         }
         return res;
