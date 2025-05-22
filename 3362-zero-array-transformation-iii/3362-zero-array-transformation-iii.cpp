@@ -14,7 +14,7 @@ public:
 
             nums[i] -= chosen.size();
 
-            while (nums[i] > 0 && !candidate.empty()) {
+            while (nums[i] > 0 && !candidate.empty() && candidate.top() >= i) {
                 nums[i]--;
                 used++;
                 chosen.push(candidate.top());
