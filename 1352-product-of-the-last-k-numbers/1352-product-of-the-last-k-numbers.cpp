@@ -1,22 +1,17 @@
 class ProductOfNumbers {
 private:
-    list<int> li;
+    vector<int> prefixProduct;
 public:
-    ProductOfNumbers() {
-    }
+    ProductOfNumbers(): prefixProduct ({1}) {}
     
     void add(int num) {
-        li.push_back(num);
+        if (num == 0) prefixProduct = {1};
+        else prefixProduct.push_back(prefixProduct.back() * num);
     }
     
     int getProduct(int k) {
-        int i = 0, res = 1;
-        for (auto it = li.rbegin(); it != li.rend(); ++it) {
-            if (i++ == k) break;
-            res *= *it;
-            if (res == 0) return 0;
-        }
-        return res;
+        if (prefixProduct.size() <= k) return 0;
+        else return prefixProduct.back() / prefixProduct[prefixProduct.size() - k - 1];
     }
 };
 
