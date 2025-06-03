@@ -1,17 +1,12 @@
 class Solution {
 private:
     long long nCr_iterative (int n, int r) {
-    // 處理 nCr = nC(n-r) 的情況，選擇較小的 r
     if (r < 0 || r > n) {
-        return 0; // 不合法的情況
+        return 0;
     }
     if (r == 0 || r == n) {
         return 1;
     }
-    if (r > n / 2) {
-        r = n - r;
-    }
-
     long long res = 1;
     for (int i = 1; i <= r; ++i) {
         res = res * (n - i + 1) / i;
