@@ -9,11 +9,8 @@ public:
             replace(s.begin(), s.end(), c, '9');
         }
 
-        pos = t.find_first_not_of('0');
-        if (pos != string::npos) {
-            char c = t[pos];
-            replace(t.begin(), t.end(), c, '0');
-        }
+        char c = t[0];
+        replace(t.begin(), t.end(), c, '0');
         return stoi(s) - stoi(t);
     }
 };
