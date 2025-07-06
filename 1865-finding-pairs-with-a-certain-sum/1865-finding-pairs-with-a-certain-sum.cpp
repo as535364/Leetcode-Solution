@@ -16,7 +16,9 @@ public:
     int count(int tot) {
         int res = 0;
         for (int num : nums1) {
-            res += nums2Cnts[tot - num];
+            int rest = tot - num;
+            if (nums2Cnts.count(rest) == 0) continue;
+            res += nums2Cnts[rest];
         }
         return res;
     }
