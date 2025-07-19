@@ -10,8 +10,8 @@ private:
             auto [dis, node] = pq.top(); pq.pop();
             if (node == n - 1) return dis <= k;
 
-            for (const auto [neighbor, weight] : graph[node]) {
-                if (weight < threshold) continue;
+            for (const auto [weight, neighbor] : graph[node]) {
+                if (weight < threshold) break;
                 if (dis + weight > costs[neighbor]) continue;
                 costs[neighbor] = dis + weight;
                 pq.push({dis + weight, neighbor});
@@ -30,10 +30,14 @@ public:
         for (const auto& edge : edges) {
             int u = edge[0], v = edge[1], w = edge[2];
             if (!online[u] || !online[v]) continue;
-            graph[u].push_back({v, w});
+            graph[u].push_back({w, v});
             
             left = min(left, w);
             right = max(right, w);
+        }
+
+        for (auto &node : graph) {
+            sort(node.begin(), node.end(), greater<>());
         }
 
         while (left <= right) {
