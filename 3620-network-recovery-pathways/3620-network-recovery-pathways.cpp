@@ -1,6 +1,5 @@
 class Solution {
 private:
-    bool ans;
     const long long inf = 1e15;
     bool isOK(int threshold, vector<vector<pair<int, int>>>& graph, int n, long long k) {
         vector<long long> costs(n, inf);
@@ -24,7 +23,6 @@ public:
         // 最大最小值 二分搜？
         int n = online.size();
         int left = 0, right = 0;
-        ans = false;
         vector<vector<pair<int, int>>> graph(n);
 
         for (const auto& edge : edges) {
