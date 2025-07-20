@@ -2,23 +2,22 @@ class Solution {
 private:
     bool ans;
     const long long inf = 1e15;
-    bool isOK(int threshold, vector<long long> &costs, vector<vector<pair<int, int>>>& graph, int n, long long k) {
-        priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<>> pq;
-        pq.push({0, 0});
+    bool isOK(int threshold, vector<vector<pair<int, int>>>& graph, int n, long long k) {
+        vector<long long> costs(n, inf);
+        
+        auto dfs = [&](this auto&& self, int x) -> long long {
+            if (x == n - 1) return 0;
+            if (costs[x] != inf) return costs[x];
 
-        while (!pq.empty()) {
-            auto [dis, node] = pq.top(); pq.pop();
-            if (dis > costs[node]) continue;
-            if (node == n - 1) return dis <= k;
-
-            for (const auto [neighbor, weight] : graph[node]) {
-                if (weight < threshold) continue;
-                if (dis + weight > costs[neighbor]) continue;
-                costs[neighbor] = dis + weight;
-                pq.push({dis + weight, neighbor});
+            long long res = inf;
+            for (auto [neighbor, weight] : graph[x]) {
+                if (weight >= threshold) {
+                    res = min(res, weight + self(neighbor));
+                }
             }
-        }
-        return false;
+            return costs[x] = res;
+        };
+        return dfs(0) <= k;
     }
 public:
     int findMaxPathScore(vector<vector<int>>& edges, vector<bool>& online, long long k) {
@@ -40,7 +39,7 @@ public:
         while (left <= right) {
             int mid = left + (right - left) / 2;
             vector<long long> costs(n, inf);
-            if (isOK(mid, costs, graph, n, k)) {
+            if (isOK(mid, graph, n, k)) {
                 left = mid + 1;
                 ans = true;
             }
