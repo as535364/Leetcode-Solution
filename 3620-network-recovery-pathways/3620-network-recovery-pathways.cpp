@@ -2,16 +2,17 @@ class Solution {
 private:
     bool ans;
     const long long inf = 1e15;
-    bool isOK(int threshold, vector<long long> costs, vector<vector<pair<int, int>>>& graph, int n, long long k) {
+    bool isOK(int threshold, vector<long long> &costs, vector<vector<pair<int, int>>>& graph, int n, long long k) {
         priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<>> pq;
         pq.push({0, 0});
 
         while (!pq.empty()) {
             auto [dis, node] = pq.top(); pq.pop();
+            if (dis > costs[node]) continue;
             if (node == n - 1) return dis <= k;
 
-            for (const auto [weight, neighbor] : graph[node]) {
-                if (weight < threshold) break;
+            for (const auto [neighbor, weight] : graph[node]) {
+                if (weight < threshold) continue;
                 if (dis + weight > costs[neighbor]) continue;
                 costs[neighbor] = dis + weight;
                 pq.push({dis + weight, neighbor});
@@ -30,14 +31,10 @@ public:
         for (const auto& edge : edges) {
             int u = edge[0], v = edge[1], w = edge[2];
             if (!online[u] || !online[v]) continue;
-            graph[u].push_back({w, v});
+            graph[u].push_back({v, w});
             
             left = min(left, w);
             right = max(right, w);
-        }
-
-        for (auto &node : graph) {
-            sort(node.begin(), node.end(), greater<>());
         }
 
         while (left <= right) {
