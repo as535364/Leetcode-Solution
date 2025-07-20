@@ -23,7 +23,7 @@ public:
     int findMaxPathScore(vector<vector<int>>& edges, vector<bool>& online, long long k) {
         // 最大最小值 二分搜？
         int n = online.size();
-        int left = INT_MAX, right = 0;
+        int left = 0, right = 0;
         ans = false;
         vector<vector<pair<int, int>>> graph(n);
 
@@ -31,8 +31,6 @@ public:
             int u = edge[0], v = edge[1], w = edge[2];
             if (!online[u] || !online[v]) continue;
             graph[u].push_back({v, w});
-            
-            left = min(left, w);
             right = max(right, w);
         }
 
@@ -41,13 +39,12 @@ public:
             vector<long long> costs(n, inf);
             if (isOK(mid, graph, n, k)) {
                 left = mid + 1;
-                ans = true;
             }
             else {
                 right = mid - 1;
             }
         }
-        return ans ? right : -1;
+        return right;
     }
     // 1 1 1 1 1 0 0 0
 };
