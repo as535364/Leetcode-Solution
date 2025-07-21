@@ -34,7 +34,6 @@ public:
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            vector<long long> costs(n, inf);
             if (isOK(mid, graph, n, k)) {
                 left = mid + 1;
             }
@@ -45,4 +44,7 @@ public:
         return right;
     }
     // 1 1 1 1 1 0 0 0
+    // follow up:
+    // 1. 有向圖（可能有環）
+    // 2. 有負邊
 };
