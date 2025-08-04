@@ -10,23 +10,21 @@
  * };
  */
 class Solution {
-private:
-    int val, left, right;
+    int val = 0, left = 0, right = 0;
     int dfs(TreeNode *node) {
         if (node == nullptr) return 0;
-
         if (node -> val == val) {
-            left = dfs(node -> left);
-            right = dfs(node -> right);
+            left = dfs(node -> left), right = dfs(node -> right);
             return 1 + left + right;
         }
-        else return 1 + dfs(node -> left) + dfs(node -> right);
+        return 1 + dfs(node -> left) + dfs(node -> right);
     }
 public:
     bool btreeGameWinningMove(TreeNode* root, int n, int x) {
+        // left, right, n - left - right - 1
+        // left > n / 2
         val = x;
         dfs(root);
-        // left, right, n - left - right - 1
-        return left > n / 2 || right > n / 2 || n - left - right - 1 > n / 2;
+        return max({left, right, n - left - right - 1}) > n / 2;
     }
 };
