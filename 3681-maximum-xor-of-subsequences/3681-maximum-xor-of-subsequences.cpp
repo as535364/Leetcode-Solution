@@ -9,15 +9,19 @@ public:
         
         vector<int> basis(31);
         for (int num : nums) {
-            for (int j = 31; j >= 0; --j) {
-                if (!((num >> j) & 1)) continue;
-                basis[j] ^= num;
+            for (int i = 30; i >= 0; --i) {
+                if (!((num >> i) & 1)) continue;
+                if (basis[i] == 0 ) {
+                    basis[i] = num;
+                    break;
+                }
+                num ^= basis[i];
             }
         }
 
         int maxXOR = 0;
-        for (int b : basis) {
-            maxXOR = max(maxXOR ^ b, maxXOR);
+        for (int i = 30; i >= 0; --i) {
+            maxXOR = max(maxXOR ^ basis[i], maxXOR);
         }
         return maxXOR;
     }
