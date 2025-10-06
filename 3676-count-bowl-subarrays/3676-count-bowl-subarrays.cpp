@@ -6,19 +6,10 @@ public:
         for (int i = 0; i < nums.size(); ++i) {
             int num = nums[i];
             while (!st.empty() && nums[st.top()] <= num) {
+                if (i - st.top() > 1)++ans;
                 st.pop();
             }
             if (!st.empty() && i - st.top() > 1) ++ans;
-            st.push(i);
-        }
-
-        st = stack<int>();
-        for (int i = nums.size() - 1; i >= 0; --i) {
-            int num = nums[i];
-            while (!st.empty() && nums[st.top()] <= num) {
-                st.pop();
-            }
-            if (!st.empty() && st.top() - i > 1) ++ans;
             st.push(i);
         }
         return ans;
