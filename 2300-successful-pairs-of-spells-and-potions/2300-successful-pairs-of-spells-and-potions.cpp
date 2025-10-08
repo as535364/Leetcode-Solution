@@ -14,7 +14,7 @@ public:
         vector<int> ans(n);
         int j = 0;
         for (int i = 0; i < n; ++i) {
-            while (j < m && static_cast<long long>(spellsSort[i].first) * static_cast<long long>(potions[j]) < success) {
+            while (j < m && (long long)spellsSort[i].first * potions[j] < success) {
                 ++j;
             }
             ans[spellsSort[i].second] = m - j;
