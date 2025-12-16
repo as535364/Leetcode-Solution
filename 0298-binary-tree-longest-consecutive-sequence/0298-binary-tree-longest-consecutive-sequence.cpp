@@ -11,25 +11,26 @@
  */
 class Solution {
 private:
-    pair<int, int> longestConsecutiveSubroot(TreeNode *root) {
-        if (root == nullptr) return {0, 0};
-        auto left_res = longestConsecutiveSubroot(root -> left);
-        auto right_res = longestConsecutiveSubroot(root -> right);
-        pair<int, int> res;
-        res.first = 1;
-        res.second = max({left_res.first, left_res.second, right_res.first, right_res.second});
+    int res = -1;
+    int dfs(TreeNode *node) {
+        if (node == nullptr) return 0;
+        int left = dfs(node -> left) + 1;
+        int right = dfs(node -> right) + 1;
 
-        if (root -> left != nullptr && root -> left -> val - root -> val == 1) {
-            res.first = max(res.first, left_res.first + 1);
+        if (node -> left != nullptr && node -> left -> val - node -> val != 1) {
+            left = 1;
         }
-        if (root -> right != nullptr && root -> right -> val - root -> val == 1) {
-            res.first = max(res.first, right_res.first + 1);
+
+        if (node -> right != nullptr && node -> right -> val - node -> val != 1) {
+            right = 1;
         }
-        return res;
+        int length = max(left, right);
+        res = max(res, length);
+        return length;
     }
 public:
     int longestConsecutive(TreeNode* root) {
-        auto res = longestConsecutiveSubroot(root);
-        return max(res.first, res.second);
+        dfs(root);
+        return res;
     }
 };
