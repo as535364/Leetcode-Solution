@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isNStraightHand(vector<int>& hand, int groupSize) {
+        if (hand.size() % groupSize) return false;
         map<int, int> counts;
         for (int h : hand) ++counts[h];
         for (auto [num, count] : counts) {
