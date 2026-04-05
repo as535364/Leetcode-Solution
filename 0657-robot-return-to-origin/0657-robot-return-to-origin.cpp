@@ -4,9 +4,9 @@ public:
         int x = 0, y = 0;
         for (char c : moves) {
             if (c == 'R') ++x;
-            if (c == 'L') --x;
-            if (c == 'U') ++y;
-            if (c == 'D') --y;
+            else if (c == 'L') --x;
+            else if (c == 'U') ++y;
+            else --y;
         }
         return (x == 0 && y == 0);
     }
