@@ -26,6 +26,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0163-missing-ranges](https://github.com/as535364/Leetcode-Solution/tree/main/0163-missing-ranges/) | Easy |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/as535364/Leetcode-Solution/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
 ## Two Pointers
 | Problem Name | Difficulty |
