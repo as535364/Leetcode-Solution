@@ -28,6 +28,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0163-missing-ranges](https://github.com/as535364/Leetcode-Solution/tree/main/0163-missing-ranges/) | Easy |
+| [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/as535364/Leetcode-Solution/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
 | [2078-two-furthest-houses-with-different-colors](https://github.com/as535364/Leetcode-Solution/tree/main/2078-two-furthest-houses-with-different-colors/) | Easy |
 ## Two Pointers
@@ -38,4 +39,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/as535364/Leetcode-Solution/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
+## Union-Find
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 <!---LeetCode Topics End-->
