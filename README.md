@@ -21,6 +21,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- | ------- |
 | [0657-robot-return-to-origin](https://github.com/as535364/Leetcode-Solution/tree/main/0657-robot-return-to-origin/) | Easy |
 | [2452-words-within-two-edits-of-dictionary](https://github.com/as535364/Leetcode-Solution/tree/main/2452-words-within-two-edits-of-dictionary/) | Medium |
+| [2833-furthest-point-from-origin](https://github.com/as535364/Leetcode-Solution/tree/main/2833-furthest-point-from-origin/) | Easy |
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -62,4 +63,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2615-sum-of-distances](https://github.com/as535364/Leetcode-Solution/tree/main/2615-sum-of-distances/) | Medium |
+## Counting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2833-furthest-point-from-origin](https://github.com/as535364/Leetcode-Solution/tree/main/2833-furthest-point-from-origin/) | Easy |
 <!---LeetCode Topics End-->
