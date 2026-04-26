@@ -30,6 +30,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0163-missing-ranges](https://github.com/as535364/Leetcode-Solution/tree/main/0163-missing-ranges/) | Easy |
+| [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/as535364/Leetcode-Solution/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
 | [2078-two-furthest-houses-with-different-colors](https://github.com/as535364/Leetcode-Solution/tree/main/2078-two-furthest-houses-with-different-colors/) | Easy |
@@ -46,10 +47,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Depth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 ## Union-Find
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 ## Trie
 | Problem Name | Difficulty |
@@ -67,4 +70,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2833-furthest-point-from-origin](https://github.com/as535364/Leetcode-Solution/tree/main/2833-furthest-point-from-origin/) | Easy |
+## Breadth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 <!---LeetCode Topics End-->
