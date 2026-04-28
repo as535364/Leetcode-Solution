@@ -33,6 +33,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/as535364/Leetcode-Solution/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+| [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/as535364/Leetcode-Solution/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2078-two-furthest-houses-with-different-colors](https://github.com/as535364/Leetcode-Solution/tree/main/2078-two-furthest-houses-with-different-colors/) | Easy |
 | [2452-words-within-two-edits-of-dictionary](https://github.com/as535364/Leetcode-Solution/tree/main/2452-words-within-two-edits-of-dictionary/) | Medium |
 | [2615-sum-of-distances](https://github.com/as535364/Leetcode-Solution/tree/main/2615-sum-of-distances/) | Medium |
@@ -78,4 +79,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
+| [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/as535364/Leetcode-Solution/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
+## Math
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/as535364/Leetcode-Solution/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/as535364/Leetcode-Solution/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 <!---LeetCode Topics End-->
