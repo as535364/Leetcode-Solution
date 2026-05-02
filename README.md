@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Dynamic Programming
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0788-rotated-digits](https://github.com/as535364/Leetcode-Solution/tree/main/0788-rotated-digits/) | Medium |
 | [2571-minimum-operations-to-reduce-an-integer-to-0](https://github.com/as535364/Leetcode-Solution/tree/main/2571-minimum-operations-to-reduce-an-integer-to-0/) | Medium |
 ## Greedy
 | Problem Name | Difficulty |
@@ -83,6 +84,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0788-rotated-digits](https://github.com/as535364/Leetcode-Solution/tree/main/0788-rotated-digits/) | Medium |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/as535364/Leetcode-Solution/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 ## Sorting
 | Problem Name | Difficulty |
