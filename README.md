@@ -31,6 +31,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0163-missing-ranges](https://github.com/as535364/Leetcode-Solution/tree/main/0163-missing-ranges/) | Easy |
+| [1331-rank-transform-of-an-array](https://github.com/as535364/Leetcode-Solution/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 | [1752-check-if-array-is-sorted-and-rotated](https://github.com/as535364/Leetcode-Solution/tree/main/1752-check-if-array-is-sorted-and-rotated/) | Easy |
@@ -67,6 +68,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1331-rank-transform-of-an-array](https://github.com/as535364/Leetcode-Solution/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [2615-sum-of-distances](https://github.com/as535364/Leetcode-Solution/tree/main/2615-sum-of-distances/) | Medium |
 ## Prefix Sum
 | Problem Name | Difficulty |
@@ -95,6 +97,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1331-rank-transform-of-an-array](https://github.com/as535364/Leetcode-Solution/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/as535364/Leetcode-Solution/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 ## Brainteaser
 | Problem Name | Difficulty |
