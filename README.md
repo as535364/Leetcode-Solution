@@ -62,6 +62,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 | [2685-count-the-number-of-complete-components](https://github.com/as535364/Leetcode-Solution/tree/main/2685-count-the-number-of-complete-components/) | Medium |
+| [3372-maximize-the-number-of-target-nodes-after-connecting-trees-i](https://github.com/as535364/Leetcode-Solution/tree/main/3372-maximize-the-number-of-target-nodes-after-connecting-trees-i/) | Medium |
 ## Union-Find
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -90,6 +91,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- | ------- |
 | [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [2685-count-the-number-of-complete-components](https://github.com/as535364/Leetcode-Solution/tree/main/2685-count-the-number-of-complete-components/) | Medium |
+| [3372-maximize-the-number-of-target-nodes-after-connecting-trees-i](https://github.com/as535364/Leetcode-Solution/tree/main/3372-maximize-the-number-of-target-nodes-after-connecting-trees-i/) | Medium |
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -132,4 +134,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1190-reverse-substrings-between-each-pair-of-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1190-reverse-substrings-between-each-pair-of-parentheses/) | Medium |
+## Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3372-maximize-the-number-of-target-nodes-after-connecting-trees-i](https://github.com/as535364/Leetcode-Solution/tree/main/3372-maximize-the-number-of-target-nodes-after-connecting-trees-i/) | Medium |
 <!---LeetCode Topics End-->
