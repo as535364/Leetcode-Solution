@@ -25,6 +25,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- | ------- |
 | [0657-robot-return-to-origin](https://github.com/as535364/Leetcode-Solution/tree/main/0657-robot-return-to-origin/) | Easy |
 | [1190-reverse-substrings-between-each-pair-of-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1190-reverse-substrings-between-each-pair-of-parentheses/) | Medium |
+| [1614-maximum-nesting-depth-of-the-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1614-maximum-nesting-depth-of-the-parentheses/) | Easy |
 | [2452-words-within-two-edits-of-dictionary](https://github.com/as535364/Leetcode-Solution/tree/main/2452-words-within-two-edits-of-dictionary/) | Medium |
 | [2833-furthest-point-from-origin](https://github.com/as535364/Leetcode-Solution/tree/main/2833-furthest-point-from-origin/) | Easy |
 | [3517-smallest-palindromic-rearrangement-i](https://github.com/as535364/Leetcode-Solution/tree/main/3517-smallest-palindromic-rearrangement-i/) | Medium |
@@ -134,10 +135,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1190-reverse-substrings-between-each-pair-of-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1190-reverse-substrings-between-each-pair-of-parentheses/) | Medium |
+| [1614-maximum-nesting-depth-of-the-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1614-maximum-nesting-depth-of-the-parentheses/) | Easy |
 ## Bracket Sequences
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1190-reverse-substrings-between-each-pair-of-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1190-reverse-substrings-between-each-pair-of-parentheses/) | Medium |
+| [1614-maximum-nesting-depth-of-the-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1614-maximum-nesting-depth-of-the-parentheses/) | Easy |
 ## Tree
 | Problem Name | Difficulty |
 | ------- | ------- |
