@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0788-rotated-digits](https://github.com/as535364/Leetcode-Solution/tree/main/0788-rotated-digits/) | Medium |
 | [2571-minimum-operations-to-reduce-an-integer-to-0](https://github.com/as535364/Leetcode-Solution/tree/main/2571-minimum-operations-to-reduce-an-integer-to-0/) | Medium |
 | [3202-find-the-maximum-length-of-valid-subsequence-ii](https://github.com/as535364/Leetcode-Solution/tree/main/3202-find-the-maximum-length-of-valid-subsequence-ii/) | Medium |
+| [3366-minimum-array-sum](https://github.com/as535364/Leetcode-Solution/tree/main/3366-minimum-array-sum/) | Medium |
 | [3428-maximum-and-minimum-sums-of-at-most-size-k-subsequences](https://github.com/as535364/Leetcode-Solution/tree/main/3428-maximum-and-minimum-sums-of-at-most-size-k-subsequences/) | Medium |
 ## Greedy
 | Problem Name | Difficulty |
@@ -49,6 +50,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [2452-words-within-two-edits-of-dictionary](https://github.com/as535364/Leetcode-Solution/tree/main/2452-words-within-two-edits-of-dictionary/) | Medium |
 | [2615-sum-of-distances](https://github.com/as535364/Leetcode-Solution/tree/main/2615-sum-of-distances/) | Medium |
 | [3202-find-the-maximum-length-of-valid-subsequence-ii](https://github.com/as535364/Leetcode-Solution/tree/main/3202-find-the-maximum-length-of-valid-subsequence-ii/) | Medium |
+| [3366-minimum-array-sum](https://github.com/as535364/Leetcode-Solution/tree/main/3366-minimum-array-sum/) | Medium |
 | [3428-maximum-and-minimum-sums-of-at-most-size-k-subsequences](https://github.com/as535364/Leetcode-Solution/tree/main/3428-maximum-and-minimum-sums-of-at-most-size-k-subsequences/) | Medium |
 ## Two Pointers
 | Problem Name | Difficulty |
