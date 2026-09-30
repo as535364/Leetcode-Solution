@@ -33,11 +33,6 @@ public:
                 }
             }
         }
-        for (int j = 0; j <= op1; ++j) {
-            for (int k = 0; k <= op2; ++k) {
-                res = min(res, dp[n][j][k]);
-            }
-        }
-        return res;
+        return dp[n][0][0];
     }
 };
