@@ -12,27 +12,27 @@ public:
         )
         */
         int n = nums.size(), res = 1e9;
-        int dp[101][101][101] = {};
+        int dp[2][101][101] = {};
 
         for (int i = 1; i <= n; ++i) {
             int num = nums[i - 1];
             for (int j = 0; j <= op1; ++j) {
                 for (int l = 0; l <= op2; ++l) {
-                    dp[i][j][l] = dp[i - 1][j][l] + num;
+                    dp[i % 2][j][l] = dp[(i - 1) % 2][j][l] + num;
                     if (j + 1 <= op1)
-                        dp[i][j][l]  = min(dp[i][j][l], dp[i - 1][j + 1][l] + (num + 1) / 2);
+                        dp[i % 2][j][l]  = min(dp[i % 2][j][l], dp[(i - 1) % 2][j + 1][l] + (num + 1) / 2);
                     if (num >= k && l + 1 <= op2)
-                        dp[i][j][l]  = min(dp[i][j][l], dp[i - 1][j][l + 1] + num - k);
+                        dp[i % 2][j][l]  = min(dp[i % 2][j][l], dp[(i - 1) % 2][j][l + 1] + num - k);
                     if (num >= k && j + 1 <= op1 && l + 1 <= op2) {
-                        dp[i][j][l]  = min(dp[i][j][l], dp[i - 1][j + 1][l + 1] + (num - k + 1) / 2);
+                        dp[i % 2][j][l]  = min(dp[i % 2][j][l], dp[(i - 1) % 2][j + 1][l + 1] + (num - k + 1) / 2);
                     }
                     if ((num + 1) / 2 >= k && j + 1 <= op1 && l + 1 <= op2) {
-                        dp[i][j][l]  = min(dp[i][j][l], dp[i - 1][j + 1][l + 1] + (num + 1) / 2 - k);
+                        dp[i % 2][j][l]  = min(dp[i % 2][j][l], dp[(i - 1) % 2][j + 1][l + 1] + (num + 1) / 2 - k);
                     }
                     
                 }
             }
         }
-        return dp[n][0][0];
+        return dp[n % 2][0][0];
     }
 };
