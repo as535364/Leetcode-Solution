@@ -10,13 +10,12 @@ public:
             ++diff_counts[abs(nums1[i] - nums2[i])];
         }
 
-        long long remaining_ops = (long long){k1} + k2;
+        long long remaining_ops = static_cast<long long>(k1) + k2; 
         for (int d = kMaxDiff; d > 0 && remaining_ops > 0; --d) {
-            long long cnt = diff_counts[d];
-            long long move = min(cnt, remaining_ops);
-            diff_counts[d] -= move;
-            diff_counts[d - 1] += move;
-            remaining_ops -= move;
+            long long num_lowered = min(diff_counts[d], remaining_ops);
+            diff_counts[d] -= num_lowered;
+            diff_counts[d - 1] += num_lowered;
+            remaining_ops -= num_lowered;
         }
 
         long long square_sum = 0;
