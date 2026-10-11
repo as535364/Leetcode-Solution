@@ -51,6 +51,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [2333-minimum-sum-of-squared-difference](https://github.com/as535364/Leetcode-Solution/tree/main/2333-minimum-sum-of-squared-difference/) | Medium |
 | [2452-words-within-two-edits-of-dictionary](https://github.com/as535364/Leetcode-Solution/tree/main/2452-words-within-two-edits-of-dictionary/) | Medium |
 | [2615-sum-of-distances](https://github.com/as535364/Leetcode-Solution/tree/main/2615-sum-of-distances/) | Medium |
+| [2778-sum-of-squares-of-special-elements](https://github.com/as535364/Leetcode-Solution/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
 | [3202-find-the-maximum-length-of-valid-subsequence-ii](https://github.com/as535364/Leetcode-Solution/tree/main/3202-find-the-maximum-length-of-valid-subsequence-ii/) | Medium |
 | [3366-minimum-array-sum](https://github.com/as535364/Leetcode-Solution/tree/main/3366-minimum-array-sum/) | Medium |
 | [3428-maximum-and-minimum-sums-of-at-most-size-k-subsequences](https://github.com/as535364/Leetcode-Solution/tree/main/3428-maximum-and-minimum-sums-of-at-most-size-k-subsequences/) | Medium |
@@ -159,4 +160,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2333-minimum-sum-of-squared-difference](https://github.com/as535364/Leetcode-Solution/tree/main/2333-minimum-sum-of-squared-difference/) | Medium |
+## Enumeration
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2778-sum-of-squares-of-special-elements](https://github.com/as535364/Leetcode-Solution/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
 <!---LeetCode Topics End-->
