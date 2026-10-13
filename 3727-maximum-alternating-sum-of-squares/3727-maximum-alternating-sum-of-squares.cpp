@@ -1,19 +1,12 @@
 class Solution {
 public:
     long long maxAlternatingSum(vector<int>& nums) {
-        sort(nums.begin(), nums.end(), [](int x, int y) {
-            return x * x < y * y;
-        });
+        for (int &num : nums) num *= num;
+        ranges::sort(nums);
 
-        int i = 0, j = nums.size() - 1;
-        long long res = 0;
+        int n = nums.size();
 
-        while (i < j) {
-            res += 1LL * nums[j] * nums[j];
-            res -= 1LL * nums[i] * nums[i];
-            ++i, --j;
-        }
-        if (i == j) res += 1LL * nums[i] * nums[i];
-        return res;
+        return -accumulate(nums.begin(), nums.begin() + n / 2, 0LL) +
+                accumulate(nums.begin() + n / 2, nums.end(), 0LL);
     }
 };
