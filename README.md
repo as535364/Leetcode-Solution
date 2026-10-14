@@ -18,6 +18,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [2078-two-furthest-houses-with-different-colors](https://github.com/as535364/Leetcode-Solution/tree/main/2078-two-furthest-houses-with-different-colors/) | Easy |
 | [2333-minimum-sum-of-squared-difference](https://github.com/as535364/Leetcode-Solution/tree/main/2333-minimum-sum-of-squared-difference/) | Medium |
 | [2571-minimum-operations-to-reduce-an-integer-to-0](https://github.com/as535364/Leetcode-Solution/tree/main/2571-minimum-operations-to-reduce-an-integer-to-0/) | Medium |
+| [3723-maximize-sum-of-squares-of-digits](https://github.com/as535364/Leetcode-Solution/tree/main/3723-maximize-sum-of-squares-of-digits/) | Medium |
 | [3727-maximum-alternating-sum-of-squares](https://github.com/as535364/Leetcode-Solution/tree/main/3727-maximum-alternating-sum-of-squares/) | Medium |
 ## Bit Manipulation
 | Problem Name | Difficulty |
@@ -116,6 +117,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/as535364/Leetcode-Solution/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2396-strictly-palindromic-number](https://github.com/as535364/Leetcode-Solution/tree/main/2396-strictly-palindromic-number/) | Medium |
 | [3428-maximum-and-minimum-sums-of-at-most-size-k-subsequences](https://github.com/as535364/Leetcode-Solution/tree/main/3428-maximum-and-minimum-sums-of-at-most-size-k-subsequences/) | Medium |
+| [3723-maximize-sum-of-squares-of-digits](https://github.com/as535364/Leetcode-Solution/tree/main/3723-maximize-sum-of-squares-of-digits/) | Medium |
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
