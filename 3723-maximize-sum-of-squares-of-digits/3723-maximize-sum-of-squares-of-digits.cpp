@@ -1,25 +1,14 @@
 class Solution {
 public:
     string maxSumOfSquares(int num, int sum) {
-        vector<int> res(num);
-        for (int i = 0; i < num; ++i) {
-            if (sum >= 9) {
-                res[i] = 9;
-                sum -= 9;
-            }
-            else {
-                res[i] = sum;
-                sum -= sum;
-                break;
-            }
-        }
+        if (sum > num * 9) return "";
 
-        if (sum) return "";
-
-        string res_str;
-        for (int x : res) {
-            res_str += to_string(x);
+        string ans(sum / 9, '9');
+        
+        if (sum % 9) {
+            ans += '0' + sum % 9;
         }
-        return res_str;
+        ans.append(num - (int)ans.size(), '0');
+        return ans;
     }
 };
