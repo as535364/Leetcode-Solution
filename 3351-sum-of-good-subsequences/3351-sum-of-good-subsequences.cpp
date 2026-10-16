@@ -2,9 +2,8 @@ class Solution {
 public:
     int sumOfGoodSubsequences(vector<int>& nums) {
         const int MOD = 1e9 + 7;
-
-        vector<long long> sum_end(1e5 + 2), cnt_end(1e5 + 2);
-
+        int max_num = *max_element(nums.begin(), nums.end());
+        vector<long long> sum_end(max_num + 2), cnt_end(max_num + 2);
         int res = 0;
         
         for (int num : nums) {
