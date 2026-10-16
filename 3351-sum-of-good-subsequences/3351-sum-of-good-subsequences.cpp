@@ -12,9 +12,9 @@ public:
             long long cnt_upper = cnt_end[num + 1];
             long long sum_lower = num - 1 < 0 ? 0 : sum_end[num - 1];
             long long sum_upper = sum_end[num + 1];
-            res = (res + num + cnt_lower * num + cnt_upper * num + sum_lower + sum_upper) % MOD;
-            sum_end[num] = (sum_end[num] + cnt_lower * num + cnt_upper * num) % MOD;
-            sum_end[num] = (sum_end[num] + sum_lower + sum_upper + num) % MOD;
+            long long contribute = (num + cnt_lower * num + cnt_upper * num + sum_lower + sum_upper) % MOD;
+            res = (res + contribute) % MOD;
+            sum_end[num] = (sum_end[num] + contribute) % MOD;
             cnt_end[num] = (cnt_end[num] + cnt_lower + cnt_upper  + 1) % MOD;
         }
         return res;
