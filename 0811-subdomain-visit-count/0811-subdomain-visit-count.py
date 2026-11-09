@@ -10,7 +10,4 @@ class Solution:
                 domain_suffix = '.'.join(domain_split[i:])
                 counts[domain_suffix] += count
         
-        res = []
-        for k, v in counts.items():
-            res.append(' '.join([str(v), k]))
-        return res
+        return [f"{v} {k}" for k, v in counts.items()]
