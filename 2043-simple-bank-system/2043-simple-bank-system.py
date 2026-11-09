@@ -1,6 +1,6 @@
 class Bank:
     def __init__(self, balance: list[int]):
-        self._balance = balance[:]
+        self._balance = [0] + balance[:]
         self._n = len(balance)
     
     def valid_account(self, accounts: List[int]):
@@ -10,11 +10,11 @@ class Bank:
         if not self.valid_account([account1, account2]):
             return False
 
-        if self._balance[account1 - 1] < money:
+        if self._balance[account1] < money:
             return False
 
-        self._balance[account1 - 1] -= money
-        self._balance[account2 - 1] += money
+        self._balance[account1] -= money
+        self._balance[account2] += money
 
         return True
 
@@ -22,7 +22,7 @@ class Bank:
         if not self.valid_account([account]):
             return False
 
-        self._balance[account - 1] += money
+        self._balance[account] += money
 
         return True
 
@@ -30,10 +30,10 @@ class Bank:
         if not self.valid_account([account]):
             return False
 
-        if self._balance[account - 1] < money:
+        if self._balance[account] < money:
             return False
 
-        self._balance[account - 1] -= money
+        self._balance[account] -= money
 
         return True
         
