@@ -29,6 +29,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0657-robot-return-to-origin](https://github.com/as535364/Leetcode-Solution/tree/main/0657-robot-return-to-origin/) | Easy |
+| [0811-subdomain-visit-count](https://github.com/as535364/Leetcode-Solution/tree/main/0811-subdomain-visit-count/) | Medium |
 | [1190-reverse-substrings-between-each-pair-of-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1190-reverse-substrings-between-each-pair-of-parentheses/) | Medium |
 | [1456-maximum-number-of-vowels-in-a-substring-of-given-length](https://github.com/as535364/Leetcode-Solution/tree/main/1456-maximum-number-of-vowels-in-a-substring-of-given-length/) | Medium |
 | [1614-maximum-nesting-depth-of-the-parentheses](https://github.com/as535364/Leetcode-Solution/tree/main/1614-maximum-nesting-depth-of-the-parentheses/) | Easy |
@@ -44,6 +45,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- | ------- |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/as535364/Leetcode-Solution/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
 | [0163-missing-ranges](https://github.com/as535364/Leetcode-Solution/tree/main/0163-missing-ranges/) | Easy |
+| [0811-subdomain-visit-count](https://github.com/as535364/Leetcode-Solution/tree/main/0811-subdomain-visit-count/) | Medium |
 | [1331-rank-transform-of-an-array](https://github.com/as535364/Leetcode-Solution/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [1559-detect-cycles-in-2d-grid](https://github.com/as535364/Leetcode-Solution/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/as535364/Leetcode-Solution/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
@@ -92,6 +94,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0811-subdomain-visit-count](https://github.com/as535364/Leetcode-Solution/tree/main/0811-subdomain-visit-count/) | Medium |
 | [1331-rank-transform-of-an-array](https://github.com/as535364/Leetcode-Solution/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [2615-sum-of-distances](https://github.com/as535364/Leetcode-Solution/tree/main/2615-sum-of-distances/) | Medium |
 | [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/as535364/Leetcode-Solution/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
@@ -103,6 +106,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Counting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0811-subdomain-visit-count](https://github.com/as535364/Leetcode-Solution/tree/main/0811-subdomain-visit-count/) | Medium |
 | [2833-furthest-point-from-origin](https://github.com/as535364/Leetcode-Solution/tree/main/2833-furthest-point-from-origin/) | Easy |
 ## Breadth-First Search
 | Problem Name | Difficulty |
